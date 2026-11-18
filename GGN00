@@ -1,0 +1,24 @@
+name: Upload Files to Telegram
+
+on:
+  workflow_dispatch:
+
+jobs:
+  upload-to-telegram:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Upload files to Telegram
+        id: upload
+        uses: xz-dev/TelegramFileUploader@v1
+        with:
+          to-who: 'YOUR_CHAT_ID'
+          message: 'Here are your files!'
+          files: |
+            example.txt
+        env:
+          API_ID: ${{ secrets.API_ID }}
+          API_HASH: ${{ secrets.API_HASH }}
+          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
