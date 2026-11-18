@@ -14,7 +14,7 @@ jobs:
         id: upload
         uses: xz-dev/TelegramFileUploader@v1
         with:
-          to-who: 'YOUR_CHAT_ID'
+          to-who: 987654321
           message: 'Here are your files!'
           files: |
             example.txt
